@@ -1,0 +1,27 @@
+{
+    "name": "phpfui/HTMLUnitTester",
+    "description": "PHPUnit Testing extensions for HMTL and CSS",
+    "minimum-stability": "stable",
+    "keywords": ["PHPUnit","html","css","unit","test","php"],
+    "homepage": "https://github.com/phpfui/HTMLUnitTester",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruce Wells",
+            "email": "brucekwells@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "rexxars/html-validator": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8.0"
+    },
+    "autoload": {
+        "psr-0": {"PHPFUI": "src/"}
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
