@@ -9,7 +9,7 @@ This package will check detect errors and warnings in HTML and CSS in stand alon
 For the best performanance, a local install of [https://github.com/validator/validator](https://github.com/validator/validator) is recommended.
 ## Installation
 ```
-composer require PHPFUI\HTMLUnitTester
+composer require phpfui/html-unit-tester
 ```
 ## Configuration
 It is recommended you run [https://github.com/validator/validator](https://github.com/validator/validator) locally. Install [Java](https://www.java.com/ES/download/) and download the [.jar file](https://github.com/validator/validator/releases). Run with the following command:
