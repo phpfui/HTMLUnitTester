@@ -3,8 +3,9 @@
 
 This package will check detect errors and warnings in HTML and CSS in stand alone strings, files or urls.
 # Requirements
-PHP 7.1 or higher
-PHPUnit 7 or higher
+- PHP 7.1 or higher
+- PHPUnit 7 or higher
+
 For the best performanance, a local install of [https://github.com/validator/validator](https://github.com/validator/validator) is recommended.
 ## Installation
 ```
@@ -51,5 +52,5 @@ You can use any of the following asserts:
 - assertValidUrl
 
 ## Examples
-See [examples](https://github.com/phpfui/HTMLUnitTester/tree/master/src/PHPFUI/HTMLUnitTester/examples)
+See [examples](https://github.com/phpfui/HTMLUnitTester/blob/master/tests/UnitTest.php)
 
