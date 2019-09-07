@@ -20,18 +20,18 @@ namespace PHPFUI\HTMLUnitTester;
 class Throttle
   {
 
-  private $lastAccessed = 0;
-  private $microseconds = 0;
+  private $lastAccessed = 0.0;
+  private $microseconds = 0.0;
 
   /**
    * There are 1 million microsecond in a second.
    */
-  public function __construct(int $microseconds = 0)
+  public function __construct(?int $microseconds = 0)
     {
     $this->lastAccessed = microtime(true);
     if ($microseconds)
       {
-      $this->microseconds = 1 / 1000000 * $microseconds;
+      $this->microseconds = 1.0 / 1000000.0 * $microseconds;
       }
     }
 
@@ -48,7 +48,7 @@ class Throttle
 
       if ($timeDifference < $this->microseconds)
         {
-        usleep(($this->microseconds - $timeDifference) * 1000000);
+        usleep(($this->microseconds - $timeDifference) * 1000000.0);
         }
       $this->lastAccessed = $now = microtime(true);
       }

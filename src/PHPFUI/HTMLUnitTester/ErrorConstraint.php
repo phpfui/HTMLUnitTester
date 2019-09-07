@@ -11,7 +11,7 @@
 
 namespace PHPFUI\HTMLUnitTester;
 
-class HtmlConstraint extends \PHPUnit\Framework\Constraint\Constraint
+class ErrorConstraint extends \PHPUnit\Framework\Constraint\Constraint
   {
   /**
    * Returns a string representation of the constraint.
@@ -59,7 +59,7 @@ class HtmlConstraint extends \PHPUnit\Framework\Constraint\Constraint
    */
   protected function matches($other) : bool
     {
-    return $other->hasErrors();
+    return ! $other->hasErrors();
     }
 
   }

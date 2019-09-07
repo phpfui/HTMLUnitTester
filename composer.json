@@ -20,8 +20,5 @@
     },
     "autoload": {
         "psr-0": {"PHPFUI": "src/"}
-    },
-    "config": {
-        "bin-dir": "bin"
     }
 }
