@@ -1,5 +1,5 @@
 {
-    "name": "phpfui/HTMLUnitTester",
+    "name": "phpfui/html-unit-tester",
     "description": "PHPUnit Testing extensions for HMTL and CSS",
     "minimum-stability": "stable",
     "keywords": ["PHPUnit","html","css","unit","test","php"],
