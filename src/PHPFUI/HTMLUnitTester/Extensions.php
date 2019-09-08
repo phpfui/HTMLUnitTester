@@ -15,10 +15,10 @@ namespace PHPFUI\HTMLUnitTester;
 class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\Hook
 	{
 
-  private $throttle;
-  private $validator;
+  private static $throttle;
+  private static $validator;
 
-  public function setUp() : void
+  public static function setUpBeforeClass() : void
     {
 		$url = $_ENV[__CLASS__ . '_url'] ?? 'http://127.0.0.1:8888';
 		$throttleMicroSeconds = $_ENV[__CLASS__ . '_delay'] ?? 0;
@@ -27,8 +27,8 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
       throw new \PHPUnit\Framework\Exception($url . ' is not a valid URL');
       }
 
-    $this->throttle = new Throttle($throttleMicroSeconds);
-    $this->validator = new \HtmlValidator\Validator($url);
+    self::$throttle = new Throttle($throttleMicroSeconds);
+    self::$validator = new \HtmlValidator\Validator($url);
     }
 
   public function assertNotWarningCss(string $css, string $message = '') : void
@@ -145,8 +145,8 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
       {
       $css = '<!DOCTYPE html><html><head><meta charset="utf-8" /><title>Title</title><style>' . $css . '</style></head><body><hr></body></html>';
       }
-    $this->throttle->delay();
-    $response = $this->validator->validateDocument($css);
+    self::$throttle->delay();
+    $response = self::$validator->validateDocument($css);
 
     return $response;
     }
@@ -157,8 +157,8 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
       {
       $html = '<!DOCTYPE html><html><head><meta charset="utf-8" /><title>Title</title></head><body>' . $html . '</body></html>';
       }
-    $this->throttle->delay();
-    $response = $this->validator->validateDocument($html);
+    self::$throttle->delay();
+    $response = self::$validator->validateDocument($html);
 
     return $response;
     }

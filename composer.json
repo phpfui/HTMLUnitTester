@@ -2,7 +2,7 @@
     "name": "phpfui/html-unit-tester",
     "description": "PHPUnit Testing extensions for HMTL and CSS",
     "minimum-stability": "stable",
-    "keywords": ["PHPUnit","html","css","unit","test","php"],
+    "keywords": ["PHPUnit","html","css","unit","test","testing","validation"],
     "homepage": "https://github.com/phpfui/HTMLUnitTester",
     "license": "MIT",
     "authors": [
