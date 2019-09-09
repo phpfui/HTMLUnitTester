@@ -13,22 +13,22 @@
 use \PHPFUI\HTMLUnitTester\Extensions;
 
 class UnitTest extends \PHPFUI\HTMLUnitTester\Extensions
-  {
+	{
 
-  public function testNotWarningCss() : void
-    {
-    $this->assertNotWarningCss('strong {font-weight: bolder;}');
-    }
+	public function testNotWarningCss() : void
+		{
+		$this->assertNotWarningCss('strong {font-weight: bolder;}');
+	}
 
-  public function testNotWarningCssFile() : void
-    {
-    $this->assertNotWarningCssFile('examples/valid.css');
-    }
+	public function testNotWarningCssFile() : void
+		{
+		$this->assertNotWarningCssFile('examples/valid.css');
+		}
 
-  public function testNotWarningCssUrl() : void
-    {
-    $this->assertNotWarningCssUrl('https://validator.w3.org/nu/style.css');
-    }
+	public function testNotWarningCssUrl() : void
+		{
+		$this->assertNotWarningCssUrl('https://validator.w3.org/nu/style.css');
+		}
 
   public function testNotWarningFile() : void
     {

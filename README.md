@@ -1,4 +1,5 @@
-# PHPFUI\HTMLUnitTester
+# PHPFUI\HTMLUnitTester [![Build Status](https://travis-ci.org/phpfui/HTMLUnitTester.png?branch=master)](https://travis-ci.org/phpfui/HTMLUnitTester)
+
 [PHPUnit](https://phpunit.de/) Testing extensions for HMTL and CSS. **PHPFUI\HTMLUnitTester** allows you to unit test HTML and CSS for errors and warnings. Often simple errors in HTML or CSS create hard to debug issues where a simple check will reveal bad code.
 
 This package will check detect errors and warnings in HTML and CSS in stand alone strings, files or urls.
