@@ -17,14 +17,13 @@ It is recommended you run [https://github.com/validator/validator](https://githu
 ```
 java -Xss512k -cp vnu.jar nu.validator.servlet.Main 8888
 ```
-In your phpunit.xml.dist config file, add the following lines in the **phpunit** element:
+If you are not using a local server, you will need to add the following lines to your phpunit.xml config in the **phpunit** element:
 ```xml
 <php>
-	<env name="PHPFUI\HTMLUnitTester\Extensions_url" value="http://127.0.0.1:8888"/>
-	<env name="PHPFUI\HTMLUnitTester\Extensions_delay" value="0"/>
+  <env name="PHPFUI\HTMLUnitTester\Extensions_url" value="http://validator.w3.org/nu"/>
+  <env name="PHPFUI\HTMLUnitTester\Extensions_delay" value="500000"/>
 </php>
 ```
-You can run against the online version at (http://validator.w3.org/nu/), but is recomended to use a delay of 500000 or higher to avoid overloading the server.
 
 ## Usage
 Extend your unit tests from \PHPFUI\HTMLUnitTester\Extensions
