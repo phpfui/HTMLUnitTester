@@ -24,7 +24,7 @@ In your phpunit.xml.dist config file, add the following lines in the **phpunit**
 	<env name="PHPFUI\HTMLUnitTester\Extensions_delay" value="0"/>
 </php>
 ```
-You can run against the online version at (https://validator.w3.org/nu/), but is recomended to use a delay of 500000 or higher to avoid overloading the server.
+You can run against the online version at (http://validator.w3.org/nu/), but is recomended to use a delay of 500000 or higher to avoid overloading the server.
 
 ## Usage
 Extend your unit tests from \PHPFUI\HTMLUnitTester\Extensions
