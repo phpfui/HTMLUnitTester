@@ -1,6 +1,6 @@
 {
     "name": "phpfui/html-unit-tester",
-    "description": "PHPUnit Testing extensions for HMTL and CSS",
+    "description": "PHPUnit Testing extensions for HMTL and CSS insures valid HTML and CSS via v.Nu validator",
     "minimum-stability": "stable",
     "keywords": ["PHPUnit","html","css","unit","test","testing","validation"],
     "homepage": "https://github.com/phpfui/HTMLUnitTester",
