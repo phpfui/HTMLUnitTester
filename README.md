@@ -54,3 +54,6 @@ You can use any of the following asserts:
 ## Examples
 See [examples](https://github.com/phpfui/HTMLUnitTester/blob/master/tests/UnitTest.php)
 
+## Documentation
+
+Full documentation at [PHPFUI\HTMLUnitTester](http://phpfui.com/?p=d&n=PHPFUI%5CHTMLUnitTester)
