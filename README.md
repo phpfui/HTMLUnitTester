@@ -15,7 +15,7 @@ composer require phpfui/html-unit-tester
 ## Configuration
 It is recommended you run [https://github.com/validator/validator](https://github.com/validator/validator) locally. Install [Java](https://www.java.com/ES/download/) and download the [.jar file](https://github.com/validator/validator/releases). Run with the following command:
 ```
-java -Xss512k -cp vnu.jar nu.validator.servlet.Main 8888
+java -Xss1024k -cp vnu.jar nu.validator.servlet.Main 8888
 ```
 If you are not using a local server, you will need to add the following lines to your phpunit.xml config in the **phpunit** element:
 ```xml
