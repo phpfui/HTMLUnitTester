@@ -2,7 +2,7 @@
 
 [PHPUnit](https://phpunit.de/) Testing extensions for HMTL and CSS. **PHPFUI\HTMLUnitTester** allows you to unit test HTML and CSS for errors and warnings. Often simple errors in HTML or CSS create hard to debug issues where a simple check will reveal bad code.
 
-This package will check detect errors and warnings in HTML and CSS in stand alone strings, files or urls.
+This package will check detect errors and warnings in HTML and CSS in stand alone strings, files, entire directories or urls.
 # Requirements
 - PHP 7.1 or higher
 - PHPUnit 7 or higher
@@ -50,6 +50,14 @@ You can use any of the following asserts:
 - assertValidFile
 - assertValidHtml
 - assertValidUrl
+
+## Directory Testing
+Instead of file by file testing, use **assertDirectory** to test an entire directory. Any files added to the directory will be automatically tested.
+```php
+	$this->assertDirectory('ValidCSS', 'cssDirectory', 'Invalid CSS');
+	$this->assertDirectory('NotWarningCSS', 'cssDirectory', 'CSS has warnings');
+```
+The error message will include the offending file name.
 
 ## Examples
 See [examples](https://github.com/phpfui/HTMLUnitTester/blob/master/tests/UnitTest.php)

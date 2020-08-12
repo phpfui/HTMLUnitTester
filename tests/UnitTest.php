@@ -76,4 +76,12 @@ class UnitTest extends \PHPFUI\HTMLUnitTester\Extensions
 		$this->assertValidUrl('https://raw.githubusercontent.com/phpfui/HTMLUnitTester/master/examples/valid.html');
 		}
 
+	public function testDirectory() : void
+		{
+		$this->assertDirectory('ValidCSS', 'examples');
+		$this->assertDirectory('Valid', 'examples');
+		$this->assertDirectory('NotWarning', 'examples');
+		$this->assertDirectory('NotWarningCSS', 'examples');
+		}
+
 	}

@@ -22,6 +22,7 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 		{
 		$url = $_ENV[__CLASS__ . '_url'] ?? 'http://127.0.0.1:8888';
 		$throttleMicroSeconds = $_ENV[__CLASS__ . '_delay'] ?? 0;
+
 		if (! filter_var($url, FILTER_VALIDATE_URL))
 			{
 			throw new \PHPUnit\Framework\Exception($url . ' is not a valid URL');
@@ -71,6 +72,41 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 		{
 		$response = $this->validateCss($css);
 		self::assertThat($response, new ErrorConstraint(), $message);
+		}
+
+	/**
+	 * Validate all files in a directory.
+	 *
+	 * @param string $type one of 'Valid' (html), 'NotWarning' (html), 'ValidCSS', or 'NotWarningCSS'
+	 */
+	public function assertDirectory(string $type, string $directory, string $message = '', bool $recurseSubdirectories = true, array $extensions = ['.css']) : void
+		{
+		$this->assertContains($type, ['Valid', 'NotWarning', 'ValidCSS', 'NotWarningCSS'], "Invalid parameter for " . __METHOD__);
+		$method = "assert{$type}File";
+		if ($recurseSubdirectories)
+			{
+			$iterator = new \RecursiveIteratorIterator(
+					new \RecursiveDirectoryIterator($directory, \RecursiveDirectoryIterator::SKIP_DOTS),
+					\RecursiveIteratorIterator::SELF_FIRST);
+			}
+		else
+			{
+			$iterator = new \DirectoryIterator($directory);
+			}
+		$exts = array_flip($extensions);
+		foreach ($iterator as $item)
+			{
+			if ('file' == $item->getType())
+				{
+				$file = $item->getPathname();
+				$ext = strrchr($file, '.');
+
+				if ($ext && isset($exts[$ext]))
+					{
+					$this->$method($file, $message . ' File: ' . $file);
+					}
+				}
+			}
 		}
 
 	public function assertValidCssFile(string $file, string $message = '') : void
