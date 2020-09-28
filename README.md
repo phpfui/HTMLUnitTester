@@ -33,7 +33,7 @@ class UnitTest extends \PHPFUI\HTMLUnitTester\Extensions
   public function testValidHtml()
     {
     $this->assertValidHtml('<h1>Header</h1>');
-    $this->assertValidHtml('<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Title</title></head><body><div>This is a test</div></body></html>');
+    $this->assertValidHtmlPage('<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Title</title></head><body><div>This is a test</div></body></html>');
     }
   }
 ```
@@ -43,12 +43,14 @@ You can use any of the following asserts:
 - assertNotWarningCssUrl
 - assertNotWarningFile
 - assertNotWarningHtml
+- assertNotWarningHtmlPage
 - assertNotWarningUrl
 - assertValidCss
 - assertValidCssFile
 - assertValidCssUrl
 - assertValidFile
 - assertValidHtml
+- assertValidHtmlPage
 - assertValidUrl
 
 ## Directory Testing

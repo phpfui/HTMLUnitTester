@@ -62,6 +62,12 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 		self::assertThat($response, new WarningConstraint(), $message);
 		}
 
+	public function assertNotWarningHtmlPage(string $html, string $message = '') : void
+		{
+		$response = $this->validateHtmlPage($html);
+		self::assertThat($response, new WarningConstraint(), $message);
+		}
+
 	public function assertNotWarningUrl(string $url, string $message = '') : void
 		{
 		$response = $this->validateHtml($this->getFromUrl($url));
@@ -133,6 +139,12 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 		self::assertThat($response, new ErrorConstraint(), $message);
 		}
 
+	public function assertValidHtmlPage(string $html, string $message = '') : void
+		{
+		$response = $this->validateHtmlPage($html);
+		self::assertThat($response, new ErrorConstraint(), $message);
+		}
+
 	public function assertValidUrl(string $url, string $message = '') : void
 		{
 		$response = $this->validateHtml($this->getFromUrl($url));
@@ -181,10 +193,8 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 			{
 			$css = '<!DOCTYPE html><html><head><meta charset="utf-8" /><title>Title</title><style>' . $css . '</style></head><body><hr></body></html>';
 			}
-		self::$throttle->delay();
-		$response = self::$validator->validateDocument($css);
 
-		return $response;
+		return $this->validateHtmlPage($css);
 		}
 
 	private function validateHtml(string $html) : \HtmlValidator\Response
@@ -193,6 +203,12 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 			{
 			$html = '<!DOCTYPE html><html><head><meta charset="utf-8" /><title>Title</title></head><body>' . $html . '</body></html>';
 			}
+
+		return $this->validateHtmlPage($html);
+		}
+
+	private function validateHtmlPage(string $html) : \HtmlValidator\Response
+		{
 		self::$throttle->delay();
 		$response = self::$validator->validateDocument($html);
 
