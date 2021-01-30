@@ -19,16 +19,17 @@ namespace PHPFUI\HTMLUnitTester;
  */
 class Throttle
 	{
-
 	private $lastAccessed = 0.0;
+
 	private $microseconds = 0.0;
 
 	/**
-	* There are 1 million microsecond in a second.
-	*/
+	 * There are 1 million microsecond in a second.
+	 */
 	public function __construct(?int $microseconds = 0)
 		{
-		$this->lastAccessed = microtime(true);
+		$this->lastAccessed = \microtime(true);
+
 		if ($microseconds)
 			{
 			$this->microseconds = 1.0 / 1000000.0 * $microseconds;
@@ -36,22 +37,21 @@ class Throttle
 		}
 
 	/**
-	* Wait at least the number of microseconds since the last
-	* delay call.
-	*/
+	 * Wait at least the number of microseconds since the last
+	 * delay call.
+	 */
 	public function delay() : void
 		{
 		if ($this->microseconds)
 			{
-			$now = microtime(true);
+			$now = \microtime(true);
 			$timeDifference = $now - $this->lastAccessed;
 
 			if ($timeDifference < $this->microseconds)
 				{
-				usleep(($this->microseconds - $timeDifference) * 1000000.0);
+				\usleep(($this->microseconds - $timeDifference) * 1000000.0);
 				}
-			$this->lastAccessed = $now = microtime(true);
+			$this->lastAccessed = $now = \microtime(true);
 			}
 		}
-
 	}
