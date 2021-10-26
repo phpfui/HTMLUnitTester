@@ -9,12 +9,8 @@
  * the LICENSE.md file that was distributed with this source
  * code
  */
-
-use \PHPFUI\HTMLUnitTester\Extensions;
-
 class UnitTest extends \PHPFUI\HTMLUnitTester\Extensions
 	{
-
 	public function testNotWarningCss() : void
 		{
 		$this->assertNotWarningCss('strong {font-weight: bolder;}');
@@ -65,7 +61,7 @@ class UnitTest extends \PHPFUI\HTMLUnitTester\Extensions
 		$this->assertValidFile('examples/valid.html');
 		}
 
-	public function testValidHtml()
+	public function testValidHtml() : void
 		{
 		$this->assertValidHtml('<h1>Header</h1>');
 		$this->assertValidHtml('<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Title</title></head><body><div>This is a test</div></body></html>');
@@ -83,5 +79,4 @@ class UnitTest extends \PHPFUI\HTMLUnitTester\Extensions
 		$this->assertDirectory('NotWarning', 'examples');
 		$this->assertDirectory('NotWarningCSS', 'examples');
 		}
-
 	}

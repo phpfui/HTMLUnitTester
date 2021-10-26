@@ -2,6 +2,6 @@ vendor/
 .idea/
 bin/
 composer.lock
-.php_cs.cache
 .phpunit.result.cache
+.php-cs-fixer.cache
 phpunit.xml
