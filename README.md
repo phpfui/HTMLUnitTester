@@ -3,9 +3,6 @@
 [PHPUnit](https://phpunit.de/) Testing extensions for HMTL and CSS. **PHPFUI\HTMLUnitTester** allows you to unit test HTML and CSS for errors and warnings. Often simple errors in HTML or CSS create hard to debug issues where a simple check will reveal bad code.
 
 This package will check detect errors and warnings in HTML and CSS in stand alone strings, files, entire directories or urls.
-# Requirements
-- PHP 7.1 or higher
-- PHPUnit 7 or higher
 
 For the best performanance, a local install of [https://github.com/validator/validator](https://github.com/validator/validator) is recommended.
 ## Installation
@@ -67,3 +64,10 @@ See [examples](https://github.com/phpfui/HTMLUnitTester/blob/master/tests/UnitTe
 ## Documentation
 
 Full documentation at [PHPFUI\HTMLUnitTester](http://phpfui.com/?p=d&n=PHPFUI%5CHTMLUnitTester)
+
+## License
+PHPFUI\HTMLUnitTester is distributed under the MIT License.
+
+### PHP Versions
+This library only supports **modern** versions of PHP which still receive security updates. While we would love to support PHP from the late Ming Dynasty, the advantages of modern PHP versions far out weigh quaint notions of backward compatibility. Time to upgrade.
+
