@@ -14,9 +14,9 @@ namespace PHPFUI\HTMLUnitTester;
 
 class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\Hook
 	{
-	private static $throttle;
+	private static ?\PHPFUI\HTMLUnitTester\Throttle $throttle = null;
 
-	private static $validator;
+	private static ?\HtmlValidator\Validator $validator = null;
 
 	public static function setUpBeforeClass() : void
 		{
@@ -28,7 +28,7 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 			throw new \PHPUnit\Framework\Exception($url . ' is not a valid URL');
 			}
 
-		self::$throttle = new Throttle($throttleMicroSeconds);
+		self::$throttle = new \PHPFUI\HTMLUnitTester\Throttle($throttleMicroSeconds);
 		self::$validator = new \HtmlValidator\Validator($url);
 		}
 

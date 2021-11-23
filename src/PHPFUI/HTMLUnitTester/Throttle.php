@@ -19,9 +19,9 @@ namespace PHPFUI\HTMLUnitTester;
  */
 class Throttle
 	{
-	private $lastAccessed = 0.0;
+	private float $lastAccessed = 0.0;
 
-	private $microseconds = 0.0;
+	private float $microseconds = 0.0;
 
 	/**
 	 * There are 1 million microsecond in a second.
