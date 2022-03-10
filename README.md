@@ -14,14 +14,23 @@ It is recommended you run [https://github.com/validator/validator](https://githu
 ```
 java -Xss1024k -cp vnu.jar nu.validator.servlet.Main 8888
 ```
-If you are not using a local server, you will need to add the following lines to your phpunit.xml config in the **phpunit** element:
-```xml
-<php>
-  <env name="PHPFUI\HTMLUnitTester\Extensions_url" value="http://validator.w3.org/nu"/>
-  <env name="PHPFUI\HTMLUnitTester\Extensions_delay" value="500000"/>
-</php>
+To run unit tests with GitHub Actions, add the following lines to you workflows test yml file:
 ```
+- name: Setup Java
+	uses: actions/setup-java@v2
+	with:
+		distribution: 'temurin'
+		java-version: '11'
 
+- name: Download vnu checker
+	run: wget https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip
+
+- name: Unzip jar file
+	run: unzip vnu.jar_20.6.30.zip
+
+- name: Run Nu Html Checker (v.Nu)
+	run: java -cp ./dist/vnu.jar -Xss1024k -Dnu.validator.servlet.bind-address=127.0.0.1 nu.validator.servlet.Main 8888 &
+```
 ## Usage
 Extend your unit tests from \PHPFUI\HTMLUnitTester\Extensions
 ```php
