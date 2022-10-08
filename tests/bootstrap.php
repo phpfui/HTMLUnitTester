@@ -14,7 +14,7 @@ function classNameExists(string $className) : string
   return \file_exists($path) ? $path : '';
   }
 
-function autoload($className) : void
+function autoload(string $className) : void
   {
   $path = \classNameExists($className);
 

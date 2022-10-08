@@ -49,7 +49,7 @@ class Throttle
 
 			if ($timeDifference < $this->microseconds)
 				{
-				\usleep(($this->microseconds - $timeDifference) * 1000000.0);
+				\usleep((int)(($this->microseconds - $timeDifference) * 1000000.0));
 				}
 			$this->lastAccessed = $now = \microtime(true);
 			}

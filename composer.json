@@ -15,11 +15,17 @@
         "php": ">=7.4 <8.2",
         "rexxars/html-validator": ">=2.2"
     },
+		"config": {
+				"platform": {
+						"php": "7.4"
+				}
+		},
     "require-dev": {
         "phpunit/phpunit": "^7.0 | <10.0",
         "phpfui/phpunit-syntax-coverage": ">=1.0",
         "roave/security-advisories": "dev-latest",
-        "friendsofphp/php-cs-fixer": "^3.2"
+        "friendsofphp/php-cs-fixer": "^3.2",
+        "phpstan/phpstan": "^1.8"
     },
     "autoload": {
         "psr-4": {"PHPFUI\\HTMLUnitTester\\": "src/PHPFUI/HTMLUnitTester/"}

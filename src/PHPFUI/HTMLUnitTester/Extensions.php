@@ -84,6 +84,7 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 	 * Validate all files in a directory.
 	 *
 	 * @param string $type one of 'Valid' (html), 'NotWarning' (html), 'ValidCSS', or 'NotWarningCSS'
+	 * @param array<string> $extensions
 	 */
 	public function assertDirectory(string $type, string $directory, string $message = '', bool $recurseSubdirectories = true, array $extensions = ['.css']) : void
 		{
