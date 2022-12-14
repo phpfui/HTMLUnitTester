@@ -20,8 +20,8 @@ class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\
 
 	public static function setUpBeforeClass() : void
 		{
-		$url = $_ENV[__CLASS__ . '_url'] ?? 'http://127.0.0.1:8888';
-		$throttleMicroSeconds = $_ENV[__CLASS__ . '_delay'] ?? 0;
+		$url = $_ENV[self::class . '_url'] ?? 'http://127.0.0.1:8888';
+		$throttleMicroSeconds = $_ENV[self::class . '_delay'] ?? 0;
 
 		if (! \filter_var($url, FILTER_VALIDATE_URL))
 			{
