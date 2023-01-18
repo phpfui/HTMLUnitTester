@@ -12,7 +12,7 @@ composer require phpfui/html-unit-tester
 ## Configuration
 It is recommended you run [https://github.com/validator/validator](https://github.com/validator/validator) locally. Install [Java](https://www.java.com/ES/download/) and download the [.jar file](https://github.com/validator/validator/releases). Run with the following command:
 ```
-java -Xss1024k -cp vnu.jar nu.validator.servlet.Main 8888
+java -Xss1024k -Dnu.validator.servlet.bind-address=127.0.0.1 -cp .\vnu.jar nu.validator.servlet.Main 8888
 ```
 To run unit tests with GitHub Actions, add the following lines to you workflows test yml file:
 ```
