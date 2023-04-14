@@ -12,7 +12,7 @@
 
 namespace PHPFUI\HTMLUnitTester;
 
-class Extensions extends \PHPUnit\Framework\TestCase implements \PHPUnit\Runner\Hook
+class Extensions extends \PHPUnit\Framework\TestCase
 	{
 	private static ?\PHPFUI\HTMLUnitTester\Throttle $throttle = null;
 
