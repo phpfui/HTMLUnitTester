@@ -59,8 +59,8 @@ You can use any of the following asserts:
 ## Directory Testing
 Instead of file by file testing, use **assertDirectory** to test an entire directory. Any files added to the directory will be automatically tested.
 ```php
-	$this->assertDirectory('ValidCSS', 'cssDirectory', 'Invalid CSS');
-	$this->assertDirectory('NotWarningCSS', 'cssDirectory', 'CSS has warnings');
+  $this->assertDirectory('ValidCSS', 'cssDirectory', 'Invalid CSS');
+  $this->assertDirectory('NotWarningCSS', 'cssDirectory', 'CSS has warnings');
 ```
 The error message will include the offending file name.
 
