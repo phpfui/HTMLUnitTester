@@ -17,13 +17,16 @@ java -Xss1024k -Dnu.validator.servlet.bind-address=127.0.0.1 -cp .\vnu.jar nu.va
 To run unit tests with GitHub Actions, add the following lines to you workflows test yml file:
 ```
 - name: Setup Java
-	uses: actions/setup-java@v3
+	uses: actions/setup-java@v5
 	with:
 		distribution: 'temurin'
 		java-version: '11'
 
 - name: Download vnu checker
 	run: wget https://github.com/validator/validator/releases/download/latest/vnu.jar
+
+- name: Run Nu Html Checker (v.Nu)
+	run: java -cp vnu.jar -Xss2048k -Dnu.validator.servlet.bind-address=127.0.0.1 nu.validator.servlet.Main 8888 &
 
 - name: Run Nu Html Checker (v.Nu)
 	run: java -cp vnu.jar -Xss1024k -Dnu.validator.servlet.bind-address=127.0.0.1 nu.validator.servlet.Main 8888 &
