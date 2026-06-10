@@ -10,7 +10,7 @@ For the best performanance, a local install of [https://github.com/validator/val
 composer require phpfui/html-unit-tester
 ```
 ## Configuration
-It is recommended you run [https://github.com/validator/validator](https://github.com/validator/validator) locally. Install [Java](https://www.java.com/ES/download/) and download the [.jar file](https://github.com/validator/validator/releases). Run with the following command:
+It is recommended you run [https://github.com/validator/validator](https://github.com/validator/validator) locally. Install [Java 25 or higher](https://www.java.com/ES/download/) and download the [.jar file](https://github.com/validator/validator/releases). Run with the following command:
 ```
 java -Xss1024k -Dnu.validator.servlet.bind-address=127.0.0.1 -cp .\vnu.jar nu.validator.servlet.Main 8888
 ```
@@ -20,16 +20,13 @@ To run unit tests with GitHub Actions, add the following lines to you workflows 
 	uses: actions/setup-java@v5
 	with:
 		distribution: 'temurin'
-		java-version: '11'
+		java-version: '25'
 
 - name: Download vnu checker
 	run: wget https://github.com/validator/validator/releases/download/latest/vnu.jar
 
 - name: Run Nu Html Checker (v.Nu)
 	run: java -cp vnu.jar -Xss2048k -Dnu.validator.servlet.bind-address=127.0.0.1 nu.validator.servlet.Main 8888 &
-
-- name: Run Nu Html Checker (v.Nu)
-	run: java -cp vnu.jar -Xss1024k -Dnu.validator.servlet.bind-address=127.0.0.1 nu.validator.servlet.Main 8888 &
 ```
 ## Usage
 Extend your unit tests from \PHPFUI\HTMLUnitTester\Extensions
